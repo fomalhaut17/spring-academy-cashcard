@@ -8,7 +8,7 @@ This repository documents the learning process of building a REST API by followi
 
 ## Work in Progress
 
-> A space to freely record what is currently being learned and developed. When the work is complete and a tag is created, it will be moved to the 'Development History'.
+> A record of what is currently being learned and developed.
 
 ### (Planned Version: v0.1.0) Completion of Spring Academy Course Content
 
@@ -40,4 +40,3 @@ This repository documents the learning process of building a REST API by followi
 ## Development History
 
 > Records of completed work and learning points at that time.
-
