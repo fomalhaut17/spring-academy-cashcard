@@ -20,7 +20,12 @@ This repository documents the learning process of building a REST API by followi
     * Implementing a new resource creation API using `@PostMapping`
     * Writing JSON serialization/deserialization tests using `@JsonTest`
 * **Concepts and Learning Points**
-    * [API Contracts & JSON](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/data-contracts)
+    * [API Contract-First Development](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/data-contracts)
+      * The practice of defining the API's request/response JSON structure first and developing while verifying it with `@JsonTest`.
+    * [TDD (Test-Driven Development) Cycle](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/test-first)
+      * The cycle of: failing test (red) -> minimal code to pass the test (green) -> code refactoring.
+    * Immutability of Java Records
+      * Data objects created using `record` are immutable, which enhances data consistency and stability.
     * Why the [CashCardController](src/main/java/example/cashcard/CashCardController.java) class is not `public`
       * Component scanning uses reflection, so it can be registered as a bean even if it's not `public`.
       * If used only within the same package, it can have the effect of encapsulating the code more internally.
@@ -35,3 +40,4 @@ This repository documents the learning process of building a REST API by followi
 ## Development History
 
 > Records of completed work and learning points at that time.
+

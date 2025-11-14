@@ -20,7 +20,12 @@ Spring Academy의 강좌를 참고하여 REST API를 구축하는 학습 과정�
     * @PostMapping을 이용한 신규 리소스 생성 API 구현
     * @JsonTest를 이용한 JSON 직렬화/역직렬화 테스트 작성
 * **개념 및 학습 포인트**
-    * [API Contracts & JSON](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/data-contracts)
+    * [API 계약 기반 개발](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/data-contracts)
+      * API의 요청/응답 JSON 구조를 먼저 정의하고, @JsonTest를 통해 이를 검증하며 개발을 진행하는 방식
+    * [TDD (Test-Driven Development) 사이클](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/test-first)
+      * 실패하는 테스트(red) -> 테스트를 통과하는 최소한의 코드 작성(green) -> 코드 리팩토링(refactor) 과정
+    * Java Record의 불변성(Immutability)
+      * record를 사용하여 생성된 데이터 객체는 변경이 불가능하므로, 데이터의 일관성과 안정성을 높일 수 있음
     * [CashCardController](src/main/java/example/cashcard/CashCardController.java) 클래스가 public이 아닌 이유
       * 컴포넌트 스캔은 리플렉션을 사용하므로 public이 아니어도 빈으로 등록됨
       * 같은 패키지 내에서만 사용된다면 코드를 좀 더 내부적으로 캡슐화하는 효과를 줄 수 있음
