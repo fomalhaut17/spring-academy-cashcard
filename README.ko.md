@@ -36,9 +36,12 @@ Spring Academy의 강좌를 참고하여 REST API를 구축하는 학습 과정�
     * [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
     * [Jayway JsonPath](https://github.com/json-path/JsonPath)
     * [DirtiesContext Annotation](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-dirtiescontext.html#page-title)
+    * [Idempotent Methods](https://www.rfc-editor.org/rfc/rfc9110#section-9.2.2)
 
 ---
 
 ## 개발 이력
 
 > 완료된 작업 및 해당 시점의 학습 기록
+
+* 아직 완료된 이력이 없음. '현재 진행 중인 작업'이 완료되면 이곳에 기록될 예정

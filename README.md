@@ -36,9 +36,12 @@ This repository documents the learning process of building a REST API by followi
     * [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
     * [Jayway JsonPath](https://github.com/json-path/JsonPath)
     * [DirtiesContext Annotation](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-dirtiescontext.html#page-title)
+    * [Idempotent Methods](https://www.rfc-editor.org/rfc/rfc9110#section-9.2.2)
 
 ---
 
 ## Development History
 
 > Records of completed work and learning points at that time.
+
+* No completed history yet. It will be recorded here once the 'Work in Progress' is completed.
