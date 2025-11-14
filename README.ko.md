@@ -2,8 +2,36 @@
 
 [English](README.md) | [한국어](README.ko.md)
 
-### 원본 소스
+Spring Academy의 강좌를 참고하여 REST API를 구축하는 학습 과정을 기록합니다. 
 
-이 저장소는 아래 링크의 과정을 기반으로 합니다.
+---
 
-* [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
+## 현재 진행 중인 작업
+
+> 현재 학습하고 개발 중인 내용에 대해 자유롭게 기록하는 공간. 작업이 완료되고 태그가 생성되면 '개발 이력'으로 이동함.
+
+### (예정 버전: v0.1.0) Spring Academy 강좌 내용 완료
+
+* **주요 구현 기능**
+    * 데이터 객체를 위한 java record 사용
+    * Spring Data JPA를 이용한 Repository 인터페이스 구현
+    * @RestController를 이용한 REST 컨트롤러 생성
+    * @GetMapping을 이용한 단일 리소스 조회 API 구현
+    * @PostMapping을 이용한 신규 리소스 생성 API 구현
+    * @JsonTest를 이용한 JSON 직렬화/역직렬화 테스트 작성
+* **개념 및 학습 포인트**
+    * [API Contracts & JSON](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/data-contracts)
+    * [CashCardController](src/main/java/example/cashcard/CashCardController.java) 클래스가 public이 아닌 이유
+      * 컴포넌트 스캔은 리플렉션을 사용하므로 public이 아니어도 빈으로 등록됨
+      * 같은 패키지 내에서만 사용된다면 코드를 좀 더 내부적으로 캡슐화하는 효과를 줄 수 있음
+    * [CashCardController.findById](src/main/java/example/cashcard/CashCardController.java#L21-L27) 메소드가 private인 이유
+      * @GetMapping, @PostMapping 같은 요청 매핑 어노테이션이 붙은 메서드를 찾을 때 리플렉션을 사용함
+      * "오직 스프링의 디스패처 서블릿(Dispatcher Servlet)에 의해서만 호출되어야 한다"는 의도를 명확히 드러냄
+* **참고 자료**
+    * [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
+
+---
+
+## 개발 이력
+
+> 완료된 작업 및 해당 시점의 학습 기록

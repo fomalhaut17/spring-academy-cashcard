@@ -2,8 +2,36 @@
 
 [English](README.md) | [한국어](README.ko.md)
 
-### Sources
+This repository documents the learning process of building a REST API by following the course from Spring Academy.
 
-This repository is based on the course at the link below.
+---
 
-* [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
+## Work in Progress
+
+> A space to freely record what is currently being learned and developed. When the work is complete and a tag is created, it will be moved to the 'Development History'.
+
+### (Planned Version: v0.1.0) Completion of Spring Academy Course Content
+
+* **Key Implementation Features**
+    * Using Java `record` for data objects
+    * Implementing a Repository interface using Spring Data JPA
+    * Creating a REST controller using `@RestController`
+    * Implementing a single resource retrieval API using `@GetMapping`
+    * Implementing a new resource creation API using `@PostMapping`
+    * Writing JSON serialization/deserialization tests using `@JsonTest`
+* **Concepts and Learning Points**
+    * [API Contracts & JSON](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/data-contracts)
+    * Why the [CashCardController](src/main/java/example/cashcard/CashCardController.java) class is not `public`
+      * Component scanning uses reflection, so it can be registered as a bean even if it's not `public`.
+      * If used only within the same package, it can have the effect of encapsulating the code more internally.
+    * Why the [CashCardController.findById](src/main/java/example/cashcard/CashCardController.java#L21-L27) method is `private`
+      * Spring uses reflection to find methods with request mapping annotations like `@GetMapping` and `@PostMapping`.
+      * It clearly expresses the intent that "this method should only be called by Spring's Dispatcher Servlet".
+* **References**
+    * [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
+
+---
+
+## Development History
+
+> Records of completed work and learning points at that time.
