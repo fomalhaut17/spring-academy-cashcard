@@ -34,6 +34,8 @@ This repository documents the learning process of building a REST API by followi
       * It clearly expresses the intent that "this method should only be called by Spring's Dispatcher Servlet".
 * **References**
     * [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
+    * [Jayway JsonPath](https://github.com/json-path/JsonPath)
+    * [DirtiesContext Annotation](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-dirtiescontext.html#page-title)
 
 ---
 
