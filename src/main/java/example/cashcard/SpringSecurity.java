@@ -19,7 +19,7 @@ public class SpringSecurity {
         http
             .authorizeHttpRequests(request -> request
                 .requestMatchers("/cashcards/**")
-                .authenticated())
+                .hasRole("CARD-OWNER"))
             .httpBasic(Customizer.withDefaults())
             .csrf(csrf -> csrf.disable());
         return http.build();
@@ -36,8 +36,13 @@ public class SpringSecurity {
         UserDetails sarah = users
             .username("sarah1")
             .password(passwordEncoder.encode("abc123"))
-            .roles()
+            .roles("CARD-OWNER")
             .build();
-        return new InMemoryUserDetailsManager(sarah);
+        UserDetails hankOwnsNoCards = User.builder()
+            .username("hank-owns-no-cards")
+            .password(passwordEncoder.encode("qrs456"))
+            .roles("NON-OWNER")
+            .build();
+        return new InMemoryUserDetailsManager(sarah, hankOwnsNoCards);
     }
 }
