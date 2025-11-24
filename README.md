@@ -12,31 +12,18 @@ This repository documents the learning process of building a REST API by followi
 
 ### (Planned Version: v0.1.0) Completion of Spring Academy Course Content
 
-* **Key Implementation Features**
-    * Using Java `record` for data objects
-    * Implementing a Repository interface using Spring Data JPA
-    * Creating a REST controller using `@RestController`
-    * Implementing a single resource retrieval API using `@GetMapping`
-    * Implementing a new resource creation API using `@PostMapping`
-    * Writing JSON serialization/deserialization tests using `@JsonTest`
-* **Concepts and Learning Points**
-    * [API Contract-First Development](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/data-contracts)
-      * The practice of defining the API's request/response JSON structure first and developing while verifying it with `@JsonTest`.
-    * [TDD (Test-Driven Development) Cycle](https://spring.academy/courses/building-a-rest-api-with-spring-boot/lessons/test-first)
-      * The cycle of: failing test (red) -> minimal code to pass the test (green) -> code refactoring.
-    * Immutability of Java Records
-      * Data objects created using `record` are immutable, which enhances data consistency and stability.
-    * Why the [CashCardController](src/main/java/example/cashcard/CashCardController.java) class is not `public`
-      * Component scanning uses reflection, so it can be registered as a bean even if it's not `public`.
-      * If used only within the same package, it can have the effect of encapsulating the code more internally.
-    * Why the [CashCardController.findById](src/main/java/example/cashcard/CashCardController.java#L21-L27) method is `private`
-      * Spring uses reflection to find methods with request mapping annotations like `@GetMapping` and `@PostMapping`.
-      * It clearly expresses the intent that "this method should only be called by Spring's Dispatcher Servlet".
-* **References**
-    * [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
-    * [Jayway JsonPath](https://github.com/json-path/JsonPath)
-    * [DirtiesContext Annotation](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-dirtiescontext.html#page-title)
-    * [Idempotent Methods](https://www.rfc-editor.org/rfc/rfc9110#section-9.2.2)
+#### Test Code
+  * [JsonTest](https://github.com/fomalhaut17/spring-academy-cashcard/blob/main/src/test/java/example/cashcard/CashCardJsonTest.java)
+  * [JacksonTester](https://github.com/fomalhaut17/spring-academy-cashcard/blob/main/src/test/java/example/cashcard/CashCardJsonTest.java)
+   
+#### References
+  * [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
+  * [JsonTest - javadoc](https://docs.spring.io/spring-boot/api/java/org/springframework/boot/test/autoconfigure/json/JsonTest.html)
+  * [Testing Spring Boot Applications](https://docs.spring.io/spring-boot/3.5/reference/testing/spring-boot-applications.html)
+  * [Spring Boot @JsonTest Annotation: How to write better JSON tests in Spring](https://youtu.be/AiiprfLqriY?si=C5iGwNwnZ_9yXId5)
+  * [Jayway JsonPath](https://github.com/json-path/JsonPath)
+  * [DirtiesContext Annotation](https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-dirtiescontext.html#page-title)
+  * [Idempotent Methods](https://www.rfc-editor.org/rfc/rfc9110#section-9.2.2)
 
 ---
 
