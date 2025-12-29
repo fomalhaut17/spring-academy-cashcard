@@ -14,12 +14,10 @@ Spring Academy의 강좌를 참고하여 REST API를 구축하는 학습 과정�
 
 ## 개발 이력
 
-### v0.1.0 - Completed Spring Academy Course[^1]
+### v0.1.0 - Spring Academy 과정 완료
 
----
-
-## 참고 자료
-[^1]: [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
+* 참고 자료
+  * [Building a REST API with Spring Boot](https://spring.academy/courses/building-a-rest-api-with-spring-boot)
   * [JsonTest - javadoc](https://docs.spring.io/spring-boot/api/java/org/springframework/boot/test/autoconfigure/json/JsonTest.html)
   * [Testing Spring Boot Applications](https://docs.spring.io/spring-boot/3.5/reference/testing/spring-boot-applications.html)
   * [Spring Boot @JsonTest Annotation: How to write better JSON tests in Spring](https://youtu.be/AiiprfLqriY?si=C5iGwNwnZ_9yXId5)
