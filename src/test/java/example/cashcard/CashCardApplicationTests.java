@@ -152,7 +152,7 @@ class CashCardApplicationTests {
 
     @Test
     @DirtiesContext
-    void shoulUpdateAnExistingCashCard() {
+    void shouldUpdateAnExistingCashCard() {
         CashCard cashCardUpdate = new CashCard(null, 19.99, null);
         HttpEntity<CashCard> request = new HttpEntity<>(cashCardUpdate);
         ResponseEntity<Void> response = restTemplate
@@ -169,5 +169,25 @@ class CashCardApplicationTests {
         Double amount = documentContext.read("$.amount");
         assertThat(id).isEqualTo(99);
         assertThat(amount).isEqualTo(19.99);
+    }
+
+    @Test
+    void shouldNotUpdateACashCardThatDoesNotExists() {
+        CashCard unknownCard = new CashCard(null, 19.99, null);
+        HttpEntity<CashCard> request = new HttpEntity<>(unknownCard);
+        ResponseEntity<Void> response = restTemplate
+            .withBasicAuth("sarah1", "abc123")
+            .exchange("/cashcards/99999", HttpMethod.PUT, request, Void.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+    }
+
+    @Test
+    void shouldNotUpdateACashCardThatIsOwnedBySomeoneElse() {
+        CashCard kumarsCard = new CashCard(null, 333.33, null);
+        HttpEntity<CashCard> request = new HttpEntity<>(kumarsCard);
+        ResponseEntity<Void> response = restTemplate
+            .withBasicAuth("sarah1", "abc123")
+            .exchange("/cashcards/102", HttpMethod.PUT, request, Void.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 }
