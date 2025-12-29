@@ -18,10 +18,11 @@ public class SpringSecurity {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(request -> request
-                .requestMatchers("/cashcards/**")
-                .hasRole("CARD-OWNER"))
+                .requestMatchers("/h2-console/**").permitAll()
+                .requestMatchers("/cashcards/**").hasRole("CARD-OWNER"))
             .httpBasic(Customizer.withDefaults())
-            .csrf(csrf -> csrf.disable());
+            .csrf(csrf -> csrf.disable())
+            .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.sameOrigin()));
         return http.build();
     }
 
